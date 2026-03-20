@@ -2,6 +2,7 @@ import '../../index.css'
 import Sidebar from '../../Components/Sidebar/Sidebar'
 import Button from '../../Components/Buttons/DownloadAudit'
 import MarketCards from './Components/OverviewCards'
+import { GaugeComponent } from 'react-gauge-component';
 
 export default function Overview() {
     return (
@@ -9,18 +10,66 @@ export default function Overview() {
         <Sidebar obg='bg-blue' oicon='white' otext='text-white' ohover='hover:none'/>
 
         <section className='flex flex-col w-full pl-[100px] gap-[30px]'>
-            <nav className='flex justify-between items-center inpad py-[20px] bordersb sticky top-0 z-[10]'>
+            <nav className='bg-[#f5f5f54c] backdrop-blur-sm flex justify-between items-center inpad py-[20px] bordersb sticky top-0 z-[10]'>
                 <p className='font-mfont text-h4'>Overview</p>
                 <Button name='Download audit'/>
             </nav>
 
-            <section className='flex flex-col gap-[10px] inpad'>
-                <div className='flex gap-[5px]'>
+            <section className='flex flex-col gap-[5px] inpad'>
+                {/* First section */}
+                <section className='flex gap-[5px]'>
                     <MarketCards name='Market Liabilities' amount='$450,000,000' Percentage='+42%' />
                     <MarketCards name='Verified Reserves' amount='$86,000,000' Percentage='+17%' />
                     <MarketCards name='Health Factor' amount='185%' Percentage='+17%' />
                     <MarketCards name='Netwrok reach' amount='3 chains' Percentage='+1 new chain this quarter' time='' />
-                </div>
+                </section>
+
+                {/* Global solvency gauge section */}
+                <section className='flex flex-col items-center borders bg-white px-[10px] py-[20px] gap-[20px]'>
+                    <div className='flex justify-between w-full'>
+                        <p className='text-h4 font-medium'>Global solvency gauge</p>
+                        
+                        {/* Live */}
+                        <div className='rounded-[5px] bg-green-200 flex gap-[5px] items-center px-[15px]'>
+                            <hr className='w-[7px] h-[7px] rounded-full bg-green-800'/>
+                            <p className='text-p text-green-800'>Live</p>
+                        </div>
+                    </div>
+
+                    <GaugeComponent
+                        value={85} // This would come from your API
+                        type="semicircle"
+                        arc={{
+                            width: 0.05,
+                            padding: 0.002,
+                            cornerRadius: 500,
+                            subArcs: [
+                            { limit: 25, color: '#007DFC', showTick: true }, // Danger/Low
+                            { limit: 50, color: '#3397FD', showTick: true }, // Warning/Medium
+                            { limit: 75, color: '#66B1FD', showTick: true }, // Safe/High
+                            { limit: 100, color: '#99CBFE', showTick: true }, // Warning/Medium
+                            ]
+                        }}
+                        
+                        pointer={{
+                            color: '#007DFC',
+                            length: 0.80,
+                            width: 5,
+                            elastic: true, // Adds a nice "bounce" effect for motion design
+                        }}
+                        labels={{
+                            valueLabel: { 
+                                formatTextValue: value => value + '%',
+                                // ADD THIS STYLE BLOCK BELOW:
+                                style: { fontSize: "20px", fill: "black", border: 'none', boxShadow:'none', fontWeight: "400" } 
+                            },
+                            tickLabels: {
+                            type: 'inner',
+                            ticks: [{ value: 0 }, { value: 50 }, { value: 100 }]
+                            }
+                        }}
+                    />
+                </section>
             </section>
         </section>
         </>

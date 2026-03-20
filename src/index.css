@@ -13,6 +13,21 @@
   --color-blue: #007DFC;
   --color-border: #DDDDDD;
 
+  /* Blue colors */
+  --color-blue2: #E6F2FF;
+  --color-blue3: #CCE5FE;
+  --color-blue4: #B3D8FE;
+  --color-blue5: #99CBFE;
+  --color-blue6: #66B1FD;
+  --color-blue7: #3397FD;
+  --color-blue8: #007DFC;
+  --color-blue9: #0064CA;
+  --color-blue10: #004B97;
+  --color-blue11: #003265;
+  --color-blue12: #00264C;
+  --color-blue13: #001932;
+  --color-blue14: #000D19;
+
   /* text */
   --text-h1: clamp(1.2em, 4vw, 3.75em);
   --text-h2: clamp(1.2em, 4vw, 3em);
