@@ -25,50 +25,62 @@ export default function Overview() {
                 </section>
 
                 {/* Global solvency gauge section */}
-                <section className='flex flex-col items-center borders bg-white px-[10px] py-[20px] gap-[20px]'>
-                    <div className='flex justify-between w-full'>
-                        <p className='text-h4 font-medium'>Global solvency gauge</p>
-                        
-                        {/* Live */}
-                        <div className='rounded-[5px] bg-green-200 flex gap-[5px] items-center px-[15px]'>
-                            <hr className='w-[7px] h-[7px] rounded-full bg-green-800'/>
-                            <p className='text-p text-green-800'>Live</p>
+                <section className='flex gap-[5px] w-full'>
+                    <section className='w-full flex flex-col items-center borders bg-white px-[20px] py-[20px] gap-[20px]'>
+                        <div className='flex justify-between w-full'>
+                            <p className='text-h4 font-medium'>Global solvency gauge</p>
+                            
+                            {/* Live */}
+                            <div className='rounded-[5px] bg-green-200 flex gap-[5px] items-center px-[15px]'>
+                                <hr className='w-[7px] h-[7px] rounded-full bg-green-800'/>
+                                <p className='text-p text-green-800'>Live</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <GaugeComponent
-                        value={85} // This would come from your API
-                        type="semicircle"
-                        arc={{
-                            width: 0.05,
-                            padding: 0.002,
-                            cornerRadius: 500,
-                            subArcs: [
-                            { limit: 25, color: '#007DFC', showTick: true }, // Danger/Low
-                            { limit: 50, color: '#3397FD', showTick: true }, // Warning/Medium
-                            { limit: 75, color: '#66B1FD', showTick: true }, // Safe/High
-                            { limit: 100, color: '#99CBFE', showTick: true }, // Warning/Medium
-                            ]
-                        }}
-                        
-                        pointer={{
-                            color: '#007DFC',
-                            length: 0.80,
-                            width: 5,
-                            elastic: true, // Adds a nice "bounce" effect for motion design
-                        }}
-                        labels={{
-                            valueLabel: { 
-                                formatTextValue: value => value + '%',
-                                // ADD THIS STYLE BLOCK BELOW:
-                                style: { fontSize: "20px", fill: "black", border: 'none', boxShadow:'none', fontWeight: "400" } 
-                            },
-                            tickLabels: {
-                            type: 'inner',
-                            ticks: [{ value: 0 }, { value: 50 }, { value: 100 }]
-                            }
-                        }}
-                    />
+                        <div className='flex w-full max-h-[300px] relative'>
+                            <GaugeComponent
+                                value={85} // This would come from your API
+                                type="semicircle"
+                                arc={{
+                                    width: 0.1,
+                                    padding: 0.002,
+                                    cornerRadius: 0,
+                                    subArcs: [
+                                        { limit: 25, color: '#007DFC', showTick: true }, 
+                                        { limit: 50, color: '#3397FD', showTick: true }, 
+                                        { limit: 75, color: '#66B1FD', showTick: true }, 
+                                    { limit: 100, color: '#99CBFE', showTick: true },
+                                ]
+                            }}
+                            
+                            pointer={{
+                                color: '#007DFC',
+                                length: 0.80,
+                                width: 5,
+                                elastic: true,
+                            }}
+                            labels={{
+                                valueLabel: { 
+                                    formatTextValue: value => value + '%',
+                                    style: { fontSize: "20px", fill: "black", border: 'none', boxShadow:'none', fontWeight: "300" } 
+                                },
+                                subLabel: {
+                                    text: 'Current health factor',
+                                    style: { fontSize: "12px", fill: "#666", fontWeight: "400" },
+                                    verticalConfig: { offset: 25 } // Adjust this to move it further down
+                                },
+                                tickLabels: {
+                                    type: 'inner',
+                                    ticks: [{ value: 0 }, { value: 50 }, { value: 100 }]
+                                }
+                            }}
+                            />
+                        </div>
+                    </section>
+
+                    <div className=''>
+
+                    </div>
                 </section>
             </section>
         </section>
