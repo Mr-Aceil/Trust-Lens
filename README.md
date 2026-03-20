@@ -1,73 +1,23 @@
-# React + TypeScript + Vite
+Trust-Lens: Institutional Transparency Dashboard
+Trust-Lens is a real-time, high-fidelity audit interface built for Cryptex Finance (CTX) to provide "Always-On" transparency for the TCAP (Total Crypto Market Cap) protocol. Moving beyond static PDF audits, this dashboard leverages Chainlink Proof of Reserve (PoR) to provide a cryptographically verifiable view of protocol solvency across multiple chains.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Core Features
+Multi-Chain Aggregation: Real-time monitoring of collateralized assets across Ethereum Mainnet, Arbitrum One, and Base.
 
-Currently, two official plugins are available:
+Solvency Visualization: An institutional-grade "Global Solvency Gauge" tracking the current health factor (Target: >150-200%).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Direct On-Chain Verification: Integrated "Verify" actions that link directly to Chainlink Oracle Feed IDs and smart contract functions (latestRoundData).
 
-## React Compiler
+On-Demand Audit Generation: A system-generated "Proof of Solvency" reporting tool that compiles live blockchain data into a downloadable, point-in-time audit for compliance.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Technical Stack
+Frontend: React / Next.js
 
-## Expanding the ESLint configuration
+Styling: Tailwind CSS (Institutional-grade UI/UX)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Web3 Integration: Ethers.js / Wagmi
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Data Oracles: Chainlink Proof of Reserve (PoR) & Price Feeds
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The "Trust-Lens" Objective
+The project was developed under a Tier A Cryptex Finance Grant to solve the "Transparency Gap" in synthetic assets. By unbundling complex on-chain data into a human-readable format, Trust-Lens allows institutional allocators to verify that $786M+ in reserves accurately backs $425M+ in liabilities without relying on centralized intermediaries.
