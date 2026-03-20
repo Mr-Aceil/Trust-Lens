@@ -3,6 +3,9 @@ import Sidebar from '../../Components/Sidebar/Sidebar'
 import Button from '../../Components/Buttons/DownloadAudit'
 import MarketCards from './Components/OverviewCards'
 import { GaugeComponent } from 'react-gauge-component';
+import ChainCards from './Components/ChainCards'
+import Base from '../../assets/Chain cards/Basepng.png'
+import Arbitrum from '../../assets/Chain cards/arbitrum-one.png'
 
 export default function Overview() {
     return (
@@ -28,7 +31,7 @@ export default function Overview() {
                 <section className='flex gap-[5px] w-full'>
                     <section className='w-full flex flex-col items-center borders bg-white px-[20px] py-[20px] gap-[20px]'>
                         <div className='flex justify-between w-full'>
-                            <p className='text-h4 font-medium'>Global solvency gauge</p>
+                            <p className='text-h5 font-medium'>Global solvency gauge</p>
                             
                             {/* Live */}
                             <div className='rounded-[5px] bg-green-200 flex gap-[5px] items-center px-[15px]'>
@@ -78,8 +81,14 @@ export default function Overview() {
                         </div>
                     </section>
 
-                    <div className=''>
-
+                    <div className='flex flex-col gap-[5px] w-full max-w-[500px]'>
+                        <div className='bg-white borders p-[15px]'>
+                            <p className='text-h5 w-fit'>Chain cards</p>
+                        </div>
+                        
+                        <ChainCards ChainName='Ethereum Mainnet'/>
+                        <ChainCards ChainLogo={Arbitrum} ChainName='Arbitrum One'/>
+                        <ChainCards ChainLogo={Base} ChainName='Base'/>
                     </div>
                 </section>
             </section>
