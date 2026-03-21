@@ -111,11 +111,6 @@ export default function Overview() {
                                         formatTextValue: value => value + '%',
                                         style: { fontSize: "20px", fill: "black", border: 'none', boxShadow: 'none', fontWeight: "300" } 
                                     },
-                                    subLabel: {
-                                        text: 'Current health factor',
-                                        style: { fontSize: "12px", fill: "#666", fontWeight: "400" },
-                                        verticalConfig: { offset: 25 }
-                                    },
                                     tickLabels: {
                                         type: 'inner',
                                         ticks: [{ value: 0 }, { value: 50 }, { value: 100 }]

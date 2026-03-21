@@ -2,10 +2,10 @@ import { button } from 'framer-motion/client'
 import '../../../index.css'
 
 type Props={
-    name: string
-    bg: string
-    text: string
-    hover: string
+    name?: string
+    bg?: string
+    text?: string
+    hover?: string
 }
 
 export default function VaultsButtons({name='no name', bg, text, hover='hover:bg-buttonh'}:Props) {

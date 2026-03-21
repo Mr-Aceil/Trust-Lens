@@ -2,14 +2,14 @@ import '../../index.css';
 import { Link } from 'react-router-dom'
 
 type Props={
-    name: string;
-    text: string;
-    bg: string;
-    logo: string;
-    hover: string;
-    link: string;
-    hide: string;
-    width: string;
+    name?: string;
+    text?: string;
+    bg?: React.ReactNode;
+    logo?: React.ReactNode;
+    hover?: React.ReactNode;
+    link?: string;
+    hide?: string;
+    width?: string;
 }
 
 export default function Pages({

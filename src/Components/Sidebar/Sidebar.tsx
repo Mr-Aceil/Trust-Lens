@@ -5,18 +5,18 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 
 type Props={
-    obg: string;
-    vbg: string;
-    abg: string;
-    oicon: string;
-    vicon: string;
-    aicon: string;
-    otext: string;
-    vtext: string;
-    atext: string;
-    ohover: string;
-    vhover: string;
-    ahover: string;
+    obg?: string;
+    vbg?: string;
+    abg?: string;
+    oicon?: string;
+    vicon?: string;
+    aicon?: string;
+    otext?: string;
+    vtext?: string;
+    atext?: string;
+    ohover?: string;
+    vhover?: string;
+    ahover?: string;
 }
 
 export default function Sidebar({

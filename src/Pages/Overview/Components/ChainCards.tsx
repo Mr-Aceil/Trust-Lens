@@ -2,12 +2,12 @@ import '../../../index.css'
 import Eth from '../../../assets/Chain cards/eth.png'
 
 type Props={
-    ChainName: string
-    Amount: string
-    SubAmount: string
-    ChainLogo: string
-    Verify: string
-    link: string
+    ChainName?: string
+    Amount?: string
+    SubAmount?: string
+    ChainLogo?: string
+    Verify?: string
+    link?: string
 }
 
 export default function ChainCards({ChainLogo=Eth, link, ChainName='Chain name', Verify='Verify on Etherscan/ Arbiscan/ Basescan', Amount= '$0', SubAmount= '$0', }:Props) {
