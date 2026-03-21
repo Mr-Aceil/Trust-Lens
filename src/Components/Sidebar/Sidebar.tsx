@@ -61,7 +61,7 @@ export default function Sidebar({
                     </svg>
 
     return (
-        <div className='fixed top-0 left-0 z-[11]'>
+        <div className='fixed top-0 left-0 z-[11] max-[850px]:hidden'>
         <motion.section 
             onMouseEnter={() => setIsHovering(false)}
             onMouseLeave={() => setIsHovering(true)}

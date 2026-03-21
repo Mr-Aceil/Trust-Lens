@@ -58,12 +58,16 @@ export default function Overview() {
         <>
         <Sidebar obg='bg-blue' oicon='white' otext='text-white' ohover='hover:none'/>
 
-        <section className='flex flex-col w-full pl-[100px] gap-[30px] pb-[20px]'>
+        <section className='flex flex-col w-full leftpad gap-[30px] pb-[20px]'>
             <Navbar name='Overview'/>
 
             <section className='flex flex-col gap-[5px] inpad'>
                 {/* First section */}
-                <section className='flex gap-[5px]'>
+                <section className='gap-[5px] grid 
+                                    grid-cols-[repeat(auto-fit,minmax(300px,1fr))]
+                                    max-[500px]:flex
+                                    max-[500px]:flex-col
+                                    '>
                     <MarketCards name='Market Liabilities' amount='$450,000,000' Percentage='+42%' />
                     <MarketCards name='Verified Reserves' amount='$86,000,000' Percentage='+17%' />
                     <MarketCards name='Health Factor' amount='185%' Percentage='+17%' />
@@ -71,7 +75,7 @@ export default function Overview() {
                 </section>
 
                 {/* Global solvency gauge section */}
-                <section className='flex gap-[5px] w-full'>
+                <section className='flex gap-[5px] w-full max-[1160px]:flex-col'>
                     <section className='w-full flex flex-col items-center borders bg-white px-[20px] py-[20px] gap-[20px]'>
                         <div className='flex justify-between w-full'>
                             <p className='text-h5 font-medium'>Global solvency gauge</p>
@@ -84,7 +88,7 @@ export default function Overview() {
                         </div>
 
                         {/* The Gauge */}
-                        <div className='flex w-full max-h-[350px] flex flex-col items-center'>
+                        <div className='flex w-full max-w-[500px] max-h-[350px] flex flex-col items-center'>
                             <GaugeComponent
                                 value={85}
                                 type="semicircle"
@@ -121,7 +125,7 @@ export default function Overview() {
                     </section>
 
                     {/* Chain cards */}
-                    <div className='flex flex-col gap-[5px] w-full max-w-[500px]'>
+                    <div className='flex flex-col gap-[5px] w-full max-w-[500px] max-[1160px]:max-w-none'>
                         <div className='bg-white borders px-[15px] py-[10px]'>
                             <p className='text-h5 w-fit'>Chain cards</p>
                         </div>
@@ -192,7 +196,7 @@ export default function Overview() {
 
                     {/* Pagination */}
                     <div className='flex justify-between items-center w-full pt-[5px]'>
-                        <p className='text-p text-subText text-sm'>
+                        <p className='text-p text-subText text-sm max-[850px]:hidden'>
                             Showing {rangeStart + 1} to {Math.min(rangeStart + PER_PAGE, entries.length)} of {entries.length} entries
                         </p>
 

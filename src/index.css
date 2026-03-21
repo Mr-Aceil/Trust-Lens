@@ -68,3 +68,13 @@ body{
 .inpad{
   @apply px-[15px]
 }
+
+.leftpad{
+  @apply pl-[100px]
+}
+
+@media (max-width: 850px) {
+  .leftpad{
+    @apply pl-0
+  }
+}
