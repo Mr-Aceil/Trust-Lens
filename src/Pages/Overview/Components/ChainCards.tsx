@@ -6,9 +6,11 @@ type Props={
     Amount: string
     SubAmount: string
     ChainLogo: string
+    Verify: string
+    link: string
 }
 
-export default function ChainCards({ChainLogo=Eth, ChainName='Chain name', Amount= '$0', SubAmount= '$0', }:Props) {
+export default function ChainCards({ChainLogo=Eth, link, ChainName='Chain name', Verify='Verify on Etherscan/ Arbiscan/ Basescan', Amount= '$0', SubAmount= '$0', }:Props) {
     return (
         <div className='bg-white borders p-[15px] w-full gap-[10px] flex flex-col'>
             <div className='flex gap-[10px] justify-between items-center w-full'>
@@ -27,9 +29,9 @@ export default function ChainCards({ChainLogo=Eth, ChainName='Chain name', Amoun
                 </div>
             </div>
 
-            <button className='bg-mainbg hover:bg-blue2 text-p text-subText borders w-full p-[10px]'>
-                Verify on Etherscan
-            </button>
+            <a href= {link} target='_blank' className='bg-mainbg flex items-center justify-center hover:bg-blue2 text-p text-subText borders w-full p-[10px]'>
+                {Verify}
+            </a>
         </div>
     )
 }

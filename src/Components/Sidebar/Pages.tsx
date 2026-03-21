@@ -16,7 +16,7 @@ export default function Pages({
     name= "button name", 
     text='text-black', 
     bg='bg-white', 
-    hover='hover:bg-[#00000019]', 
+    hover='hover:bg-buttonh', 
     link, 
     width , 
     hide, 

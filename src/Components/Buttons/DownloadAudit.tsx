@@ -6,6 +6,6 @@ type Props={
 
 export default function DownloadAudit({name='button'}:Props) {
     return (
-        <div className="text-white rounded-[10px] bg-blue text-p px-[20px] py-[10px]">{name}</div>
+        <button className="text-white rounded-[10px] bg-blue hover:bg-blue7 text-p px-[20px] py-[10px]">{name}</button>
     )
 }
