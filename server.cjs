@@ -6,8 +6,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// The fix is the parentheses around the *
-app.get('(.*)', (req, res) => {
+// Using a named wildcard parameter to satisfy Express 5/path-to-regexp
+app.get('/:splat*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
