@@ -1,4 +1,3 @@
-import { button } from 'framer-motion/client'
 import '../../../index.css'
 
 type Props={

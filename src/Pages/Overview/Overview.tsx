@@ -1,7 +1,6 @@
 import '../../index.css'
 import { useState } from 'react'
 import Sidebar from '../../Components/Sidebar/Sidebar'
-import Button from '../../Components/Buttons/DownloadAudit'
 import MarketCards from './Components/OverviewCards'
 import { GaugeComponent } from 'react-gauge-component';
 import ChainCards from './Components/ChainCards'
