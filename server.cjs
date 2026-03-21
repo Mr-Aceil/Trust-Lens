@@ -2,15 +2,12 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-const PORT = process.env.PORT || 3000;
-
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Using a named wildcard parameter to satisfy Express 5/path-to-regexp
-app.get('/:splat*', (req, res) => {
+// ✅ Use '*' instead of '(.*)'
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
