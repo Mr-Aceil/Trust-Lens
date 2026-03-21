@@ -8,7 +8,7 @@
     "build": "tsc && npm run build:react", 
     "start": "node server.js",
     "lint": "eslint .",
-    "preview": "vite preview",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
