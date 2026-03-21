@@ -31,10 +31,10 @@
   --color-blue14: #000D19;
 
   /* text */
-  --text-h1: clamp(1.2em, 4vw, 3.75em);
-  --text-h2: clamp(1.2em, 4vw, 3em);
-  --text-h3: clamp(1.2em, 4vw, 2.43em);
-  --text-h4: clamp(1.2em, 4vw, 1.93em);
+  --text-h1: clamp(1.5em, 4vw, 3.75em);
+  --text-h2: clamp(1.5em, 4vw, 3em);
+  --text-h3: clamp(1.5em, 4vw, 2.43em);
+  --text-h4: clamp(1.5em, 4vw, 1.93em);
   --text-h5: clamp(1em, 4vw, 1.56em);
   --text-h6: clamp(1em, 4vw, 1.25em);
   --text-h7: clamp(1em, 4vw, 1.12em);

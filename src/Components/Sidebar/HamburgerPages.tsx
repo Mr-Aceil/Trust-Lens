@@ -8,6 +8,6 @@ type Props={
 
 export default function HamburgerPages({name='Page name', to}:Props) {
     return (
-        <Link to={to} className='text-h6 font-medium inpadi bordersb hover:bg-buttonh'>{name}</Link>
+        <Link to={to} className='text-[1.5em] font-medium inpadi bordersb hover:bg-buttonh'>{name}</Link>
     )
 }

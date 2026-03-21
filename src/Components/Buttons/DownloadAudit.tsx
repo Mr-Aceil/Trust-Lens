@@ -2,10 +2,11 @@ import '../../index.css'
 
 type Props={
     name: string;
+    others?: string;
 }
 
-export default function DownloadAudit({name='button'}:Props) {
+export default function DownloadAudit({name='button', others='max-[850px]:hidden'}:Props) {
     return (
-        <button className="text-white rounded-[10px] bg-blue hover:bg-blue7 text-p px-[20px] py-[10px] max-[850px]:hidden">{name}</button>
+        <button className={`text-white rounded-[10px] bg-blue hover:bg-blue7 text-p px-[20px] py-[10px] ${others}`}>{name}</button>
     )
 }
