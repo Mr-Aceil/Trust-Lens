@@ -136,7 +136,7 @@ export default function Overview() {
                 </section>
 
                 {/* ── Verification Ledger ───────────────────────────────────── */}
-                <section className='w-full flex flex-col borders bg-white px-[20px] py-[20px] gap-[20px]'>
+                <section className='w-full flex flex-col borders overflow-hidden bg-white px-[20px] py-[20px] gap-[20px]'>
 
                     {/* Header */}
                     <div className='flex justify-between items-center w-full'>
@@ -195,7 +195,7 @@ export default function Overview() {
                     </div>
 
                     {/* Pagination */}
-                    <div className='flex justify-between items-center w-full pt-[5px]'>
+                    <div className='flex justify-between items-center w-full pt-[5px] overflow-x-scroll'>
                         <p className='text-p text-subText text-sm max-[850px]:hidden'>
                             Showing {rangeStart + 1} to {Math.min(rangeStart + PER_PAGE, entries.length)} of {entries.length} entries
                         </p>

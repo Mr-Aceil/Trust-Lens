@@ -69,6 +69,10 @@ body{
   @apply px-[15px]
 }
 
+.inpadi{
+  @apply px-[15px] py-[20px]
+}
+
 .leftpad{
   @apply pl-[100px]
 }
