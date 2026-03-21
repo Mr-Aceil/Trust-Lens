@@ -4,8 +4,8 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// ✅ Use '*' instead of '(.*)'
-app.get('*', (req, res) => {
+// ✅ No route pattern needed — handles everything not matched above
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
