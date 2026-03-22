@@ -68,7 +68,7 @@ export default function nav({name='Page Name',
 
         {/* Hamburger */}
         <section onClick={() => sethamburger(!hamburger)} className={`fixed flex-col w-full h-full bg-[#ffffff31] z-[12] backdrop-blur-[10px]  transition-all ease-in-out ${hamburger ? 'hidden' : 'flex'}`}>
-        <section className={`flex flex-col w-[80%] max-w-[400px] shadow-2xl h-full bg-white justify-between`}>
+        <section className={`flex flex-col w-[80%] max-w-[400px] shadow-2xl h-full bg-white justify-between `}>
             <section className='flex flex-col'>
                 <div className='flex justify-between inpadi bordersb items-center'>
                     <div className='flex gap-[10px] items-center'>
