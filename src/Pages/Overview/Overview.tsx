@@ -59,7 +59,7 @@ export default function Overview() {
         <Sidebar obg='bg-blue' oicon='white' otext='text-white' ohover='hover:none'/>
 
         <section className='flex flex-col w-full leftpad gap-[30px] pb-[20px]'>
-            <Navbar name='Overview' obg='bg-blue' otext='text-white' />
+            <Navbar name='Overview' obg='bg-blue' otext='text-white' oicon='white'/>
 
             <section className='flex flex-col gap-[5px] inpad'>
                 {/* First section */}
@@ -195,7 +195,7 @@ export default function Overview() {
                     </div>
 
                     {/* Pagination */}
-                    <div className='flex justify-between items-center w-full pt-[5px] overflow-x-scroll'>
+                    <div className='flex justify-between items-center w-full pt-[5px] max-[500px]:overflow-x-scroll'>
                         <p className='text-p text-subText text-sm max-[850px]:hidden'>
                             Showing {rangeStart + 1} to {Math.min(rangeStart + PER_PAGE, entries.length)} of {entries.length} entries
                         </p>

@@ -6,10 +6,14 @@ type Props={
     to: string;
     bg?: React.ReactNode;
     textColor?: React.ReactNode;
+    icon?: React.ReactNode;
 }
 
-export default function HamburgerPages({name='Page name', to, bg, textColor}:Props) {
+export default function HamburgerPages({name='Page name', to, bg, textColor, icon}:Props) {
     return (
-        <Link to={to} className={`text-h5 font-medium inpadi bordersb  ${bg} ${textColor}`}>{name}</Link>
+        <Link to={to} className={`flex gap-[10px] inpad py-[20px] bordersb items-center  ${bg}`}>
+            {icon}
+            <p className={`text-p font-medium ${textColor}`}>{name}</p>  
+        </Link>
     )
 }
