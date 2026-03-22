@@ -3,6 +3,7 @@ import Logo from '../../../src/assets/Logo/Logo.png'
 import Pages from '../../Components/Sidebar/Pages'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
+import DownloadOptions from './DownloadOptions'
 
 type Props={
     obg?: string;
@@ -28,6 +29,7 @@ export default function Sidebar({
 
     // Set to false initially so it starts expanded, or true for collapsed
     const [isHovering, setIsHovering] = useState(true)
+    const [downloadOptions, setDownloadOptions] = useState(true)
     
     const Overviewicon= <svg width="20" height="20" viewBox="0 0 20 20" fill={oicon} xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.6667 15.8333V8.74996C16.6667 8.62059 16.6366 8.49299 16.5787 8.37728C16.5208 8.26157 16.4368 8.16091 16.3333 8.08329L10.5 3.70829C10.3558 3.60011 10.1803 3.54163 10 3.54163C9.8197 3.54163 9.64426 3.60011 9.50001 3.70829L3.66668 8.08329C3.56318 8.16091 3.47918 8.26157 3.42132 8.37728C3.36346 8.49299 3.33334 8.62059 3.33334 8.74996V15.8333C3.33334 16.0543 3.42114 16.2663 3.57742 16.4225C3.7337 16.5788 3.94566 16.6666 4.16668 16.6666H7.50001C7.72102 16.6666 7.93299 16.5788 8.08927 16.4225C8.24555 16.2663 8.33334 16.0543 8.33334 15.8333V13.3333C8.33334 13.1123 8.42114 12.9003 8.57742 12.744C8.7337 12.5878 8.94566 12.5 9.16668 12.5H10.8333C11.0544 12.5 11.2663 12.5878 11.4226 12.744C11.5789 12.9003 11.6667 13.1123 11.6667 13.3333V15.8333C11.6667 16.0543 11.7545 16.2663 11.9108 16.4225C12.067 16.5788 12.279 16.6666 12.5 16.6666H15.8333C16.0544 16.6666 16.2663 16.5788 16.4226 16.4225C16.5789 16.2663 16.6667 16.0543 16.6667 15.8333Z" fill={oicon} stroke={oicon} stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
@@ -45,7 +47,7 @@ export default function Sidebar({
                             <path d="M11.625 15.513C11.5083 15.471 11.4 15.4 11.3 15.3L7.7 11.7C7.5 11.5 7.404 11.2667 7.412 11C7.42 10.7333 7.516 10.5 7.7 10.3C7.9 10.1 8.13767 9.996 8.413 9.988C8.68833 9.98 8.92567 10.0757 9.125 10.275L11 12.15V5C11 4.71667 11.096 4.47934 11.288 4.288C11.48 4.09667 11.7173 4.00067 12 4C12.2827 3.99934 12.5203 4.09534 12.713 4.288C12.9057 4.48067 13.0013 4.718 13 5V12.15L14.875 10.275C15.075 10.075 15.3127 9.979 15.588 9.987C15.8633 9.995 16.1007 10.0993 16.3 10.3C16.4833 10.5 16.5793 10.7333 16.588 11C16.5967 11.2667 16.5007 11.5 16.3 11.7L12.7 15.3C12.6 15.4 12.4917 15.471 12.375 15.513C12.2583 15.555 12.1333 15.5757 12 15.575C11.8667 15.5743 11.7417 15.5537 11.625 15.513ZM6 20C5.45 20 4.97933 19.8043 4.588 19.413C4.19667 19.0217 4.00067 18.5507 4 18V16C4 15.7167 4.096 15.4793 4.288 15.288C4.48 15.0967 4.71733 15.0007 5 15C5.28267 14.9993 5.52033 15.0953 5.713 15.288C5.90567 15.4807 6.00133 15.718 6 16V18H18V16C18 15.7167 18.096 15.4793 18.288 15.288C18.48 15.0967 18.7173 15.0007 19 15C19.2827 14.9993 19.5203 15.0953 19.713 15.288C19.9057 15.4807 20.0013 15.718 20 16V18C20 18.55 19.8043 19.021 19.413 19.413C19.0217 19.805 18.5507 20.0007 18 20H6Z" fill="#0064CA"/>
                             </svg>
 
-    const Arrow= <svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    const Arrow= <svg className={`${downloadOptions ? 'rotate-0' : 'rotate-[180deg]'} transition-all ease-in-out duration-500`}  width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_3243_1899)">
                             <path d="M6.57999 9.54801L5.51999 8.48701L11.297 2.70801C11.3896 2.61486 11.4996 2.54093 11.6209 2.49048C11.7421 2.44003 11.8722 2.41406 12.0035 2.41406C12.1348 2.41406 12.2648 2.44003 12.3861 2.49048C12.5073 2.54093 12.6174 2.61486 12.71 2.70801L18.49 8.48701L17.43 9.54701L12.005 4.12301L6.57999 9.54801Z" fill="black"/>
                             </g>
@@ -99,28 +101,33 @@ export default function Sidebar({
             {/* Bottom Section */}
             <section className={`flex flex-col gap-[30px] w-full overflow-hidden ${isHovering ? 'items-center' : 'items-start'}`}>
                 {/* Download Audit */}
-                <div className={`flex gap-[5px] items-center justify-between min-h-[24px] ${isHovering ? 'w-fit' : 'w-full'}`}>
-                    <div className="flex gap-[5px] items-center">
-                        {DownloadButton}
-                        <AnimatePresence>
-                            {!isHovering && (
-                                <motion.p 
-                                    initial={{ opacity: 0, width: 0 }}
-                                    animate={{ opacity: 1, width: "auto" }}
-                                    exit={{ opacity: 0, width: 0 }}
-                                    className="font-mfont text-p whitespace-nowrap overflow-hidden"
-                                >
-                                    Download Audit
-                                </motion.p>
-                            )}
-                        </AnimatePresence>
+                <section className='flex flex-col gap-[20px]'>
+                    <div onClick={() => setDownloadOptions(!downloadOptions)} className={`cursor-pointer flex gap-[5px] items-center justify-between ${isHovering ? 'w-fit' : 'w-full'}`}>
+                        <div className="flex gap-[5px] items-center">
+                            {DownloadButton}
+                            <AnimatePresence>
+                                {!isHovering && (
+                                    <motion.p 
+                                        initial={{ opacity: 0, width: 0 }}
+                                        animate={{ opacity: 1, width: "auto" }}
+                                        exit={{ opacity: 0, width: 0 }}
+                                        className="font-mfont text-p whitespace-nowrap overflow-hidden"
+                                    >
+                                        Download Audit
+                                    </motion.p>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                        
+                        {!isHovering && (
+                            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                                {Arrow}
+                            </motion.div>
+                        )}
                     </div>
-                    {!isHovering && (
-                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                            {Arrow}
-                        </motion.div>
-                    )}
-                </div>
+
+                    <DownloadOptions display={downloadOptions ? 'hidden' : 'flex'} />
+                </section>
 
                 {/* Powered by */}
                 <div className="flex items-center gap-[5px] min-h-[20px]">
