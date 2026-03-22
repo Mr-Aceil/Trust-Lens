@@ -6,7 +6,7 @@ import { useState } from 'react'
 import Logo from '../logo'
 import Pages from '../Sidebar/HamburgerPages'
 import DownloadButton from '../../assets/Download-Audit/material-symbols_download-rounded.svg'
-
+import Chainlink from '../../assets/Powered by/Vector.svg'
 
 type Props={
     name: string
@@ -68,23 +68,32 @@ export default function nav({name='Page Name',
 
         {/* Hamburger */}
         <section className={`fixed flex-col w-full h-full bg-[#ffffff31] z-[12] backdrop-blur-[10px]  transition-all ease-in-out ${hamburger ? 'hidden' : 'flex'}`}>
-        <section className={`flex flex-col w-[80%] max-w-[400px] shadow-2xl h-full bg-white`}>
-            <div className='flex justify-between inpadi bordersb items-center'>
-                <div className='flex gap-[10px] items-center'>
-                    <img src={Cancel} onClick={() => sethamburger(!hamburger)} alt="" className='w-[20px] h-[20px] block' />
-                    
-                    <div className='flex gap-[5px] items-center'>
-                        <Logo />
-                        <p className='text-h5 font-medium'>Trust lens</p>
+        <section className={`flex flex-col w-[80%] max-w-[400px] shadow-2xl h-full bg-white justify-between`}>
+            <section className='flex flex-col'>
+                <div className='flex justify-between inpadi bordersb items-center'>
+                    <div className='flex gap-[10px] items-center'>
+                        <img src={Cancel} onClick={() => sethamburger(!hamburger)} alt="" className='w-[20px] h-[20px] block' />
+                        
+                        <div className='flex gap-[5px] items-center'>
+                            <Logo />
+                            <p className='text-h5 font-medium'>Trust lens</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <section className='flex flex-col '>
-                <Pages name='Overview' to='/' bg={obg} textColor={otext} icon={Overviewicon}/>
-                <Pages name='Vaults' to='/vaults' bg={vbg} textColor={vtext} icon={Vaults}/>
-                <Pages name='Analysis' to='/analysis' bg={abg} textColor={atext} icon={Analysis}/>
+                <section className='flex flex-col '>
+                    <Pages name='Overview' to='/' bg={obg} textColor={otext} icon={Overviewicon}/>
+                    <Pages name='Vaults' to='/vaults' bg={vbg} textColor={vtext} icon={Vaults}/>
+                    <Pages name='Analysis' to='/analysis' bg={abg} textColor={atext} icon={Analysis}/>
+                </section>
             </section>
+
+            <div className='flex gap-[5px] inpad py-[30px]'>
+                <p className='text-p'>Powered</p>
+                <p className='text-p'>by</p>
+                <img src={Chainlink} alt="Chainlink logo" />
+                <p className='text-p text-blue'>Chainlink</p>
+            </div>
         </section>
         </section>
         </>
