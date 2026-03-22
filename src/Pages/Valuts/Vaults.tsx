@@ -87,10 +87,10 @@ export default function Vaults() {
 
             <section className='flex flex-col gap-[5px] w-full inpad'>
                 {/* Vault selector tabs */}
-                <section className='bg-white w-fit p-[10px] borders flex flex-wrap items-center gap-[10px]'>
-                    <VaultsButtons name='Ethererum vault' bg='bg-blue' text='text-white' hover=''/>
-                    <VaultsButtons name='Arbitrum vault'/>
-                    <VaultsButtons name='Base vault'/>
+                <section className='bg-white w-fit max-[500px]:w-full p-[10px] borders flex flex-wrap items-center gap-[10px]'>
+                    <VaultsButtons name='Ethererum' bg='bg-blue' text='text-white' hover=''/>
+                    <VaultsButtons name='Arbitrum'/>
+                    <VaultsButtons name='Base'/>
                 </section>
 
                 {/* Vault value card */}
