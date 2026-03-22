@@ -46,7 +46,8 @@ export default function nav({name='Page Name',
         </nav>
 
         {/* Hamburger */}
-        <section className={`fixed flex-col w-[80%] shadow-2xl h-full bg-white z-[12]  transition-all ease-in-out ${hamburger ? 'hidden' : 'flex'}`}>
+        <section className={`fixed flex-col w-full h-full bg-[#ffffff31] z-[12] backdrop-blur-[10px]  transition-all ease-in-out ${hamburger ? 'hidden' : 'flex'}`}>
+        <section className={`flex flex-col w-[80%] shadow-2xl h-full bg-white`}>
             <div className='flex justify-between inpadi bordersb items-center'>
                 <div className='flex gap-[10px] items-center'>
                     <img src={Cancel} onClick={() => sethamburger(!hamburger)} alt="" className='w-[20px] h-[20px] hidden max-[850px]:block' />
@@ -63,6 +64,7 @@ export default function nav({name='Page Name',
                 <Pages name='Vaults' to='/vaults' bg={vbg} textColor={vtext}/>
                 <Pages name='Analysis' to='/analysis' bg={abg} textColor={atext}/>
             </section>
+        </section>
         </section>
         </>
     )
