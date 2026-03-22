@@ -70,7 +70,7 @@ body{
 }
 
 .inpadi{
-  @apply px-[15px] py-[20px]
+  @apply px-[15px] py-[10px]
 }
 
 .leftpad{

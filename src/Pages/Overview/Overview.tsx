@@ -59,7 +59,7 @@ export default function Overview() {
         <Sidebar obg='bg-blue' oicon='white' otext='text-white' ohover='hover:none'/>
 
         <section className='flex flex-col w-full leftpad gap-[30px] pb-[20px]'>
-            <Navbar name='Overview'/>
+            <Navbar name='Overview' obg='bg-blue' otext='text-white' />
 
             <section className='flex flex-col gap-[5px] inpad'>
                 {/* First section */}
