@@ -10,7 +10,7 @@ export default function Vaults() {
         <Sidebar vbg='bg-blue' vicon='white' vtext='text-white' vhover='hover:none'/>
         
         <section className='flex flex-col w-full leftpad gap-[30px] pb-[20px]'>
-            <Navbar name='Vaults'/>
+            <Navbar name='Vaults' vbg='bg-blue' vtext='text-white'/>
 
             <section className='flex flex-col gap-[5px] w-full inpad'>
                 <section className='bg-white w-fit p-[10px] borders flex items-center gap-[10px]'>
