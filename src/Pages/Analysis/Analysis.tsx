@@ -89,9 +89,9 @@ export default function Analysis() {
                 <section className='flex gap-5 max-[1100px]:flex-col'>
 
                     {/* ── Network solvency history ─────────────────────────── */}
-                    <div className='w-full bg-white borders px-15 py-20 flex flex-col gap-5'>
+                    <div className='w-full bg-white borders px-15 py-20 flex flex-col gap-20'>
                         <div className='flex justify-between items-center flex-wrap gap-10'>
-                            <p className='text-h5'>Network solvency history (Health factor %)</p>
+                            <p className='text-h5'>Network solvency history</p>
                             {Help}
                         </div>
 
@@ -154,7 +154,7 @@ export default function Analysis() {
                     </div>
 
                     {/* ── Asset health ─────────────────────────────────────── */}
-                    <div className='w-full bg-white borders px-15 py-20 flex flex-col gap-5'>
+                    <div className='w-full bg-white borders px-15 py-20 flex flex-col gap-20'>
                         <div className='flex justify-between items-center flex-wrap gap-10'>
                             <p className='text-h5'>Asset health</p>
                             {Help}
@@ -223,7 +223,7 @@ export default function Analysis() {
                 </section>
 
                 {/* ── Collateral mix ───────────────────────────────────────── */}
-                <div className='w-full bg-white borders px-15 py-20 flex flex-col gap-5'>
+                <div className='w-full bg-white borders px-15 py-20 flex flex-col gap-20'>
                     <div className='flex justify-between items-center'>
                         <p className='text-h5'>Collateral mix</p>
                         {Help}
