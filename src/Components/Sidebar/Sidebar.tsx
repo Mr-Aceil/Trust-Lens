@@ -70,7 +70,7 @@ export default function Sidebar({
             initial={false}
             animate={{ width: isHovering ? 100 : 280 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="bg-white h-full flex flex-col p-[1.25em] justify-between overflow-hidden bordersr"
+            className="bg-white h-viewport flex flex-col p-[1.25em] justify-between overflow-hidden bordersr"
         >
             <section className={`flex gap-[3.125em] flex-col ${isHovering ? 'items-center' : 'items-start'}`}>
                 {/* Logo Section */}

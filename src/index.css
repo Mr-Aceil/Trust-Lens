@@ -65,6 +65,9 @@
   --spacing-350: 350px;
   --spacing-500: 500px;
 
+  /* Spacing */
+  --height-viewport:100vh;
+
   /* Rounded */
   --radius-6:6px;
 
