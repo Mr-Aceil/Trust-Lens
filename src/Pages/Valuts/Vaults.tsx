@@ -74,20 +74,20 @@ export default function Vaults() {
 
     // ── Download handler ──────────────────────────────────────────────────────
     // ✅ API INTEGRATION POINT: swap this for a real download/export endpoint
-    const handleDownloadAudit = () => {
-        console.log('Download audit triggered — wire to your export API here')
-    }
+    // const handleDownloadAudit = () => {
+    //     console.log('Download audit triggered — wire to your export API here')
+    // }
 
     return (
         <>
         <Sidebar vbg='bg-blue' vicon='white' vtext='text-white' vhover='hover:none'/>
         
-        <section className='flex flex-col w-full leftpad gap-[30px] pb-[20px]'>
+        <section className='flex flex-col w-full leftpad gap-30 pb-20'>
             <Navbar name='Vaults' vbg='bg-blue' vtext='text-white' vicon='white'/>
 
-            <section className='flex flex-col gap-[5px] w-full inpad'>
+            <section className='flex flex-col gap-5 w-full inpad'>
                 {/* Vault selector tabs */}
-                <section className='bg-white w-fit max-[500px]:w-full p-[10px] borders flex flex-wrap items-center gap-[10px]'>
+                <section className='bg-white w-fit max-[500px]:w-full p-10 borders flex flex-wrap items-center gap-10'>
                     <VaultsButtons name='Ethererum' bg='bg-blue' text='text-white' hover=''/>
                     <VaultsButtons name='Arbitrum'/>
                     <VaultsButtons name='Base'/>
@@ -97,13 +97,13 @@ export default function Vaults() {
                 <OverviewCards name='Total vault value' amount='$425,000,000' Percentage='last updated' time='2 minutes ago'/>
 
                 {/* ── Liability & Collateral Ledger ──────────────────────────────────────── */}
-                <section className='w-full flex flex-col borders overflow-hidden bg-white px-[20px] py-[20px] gap-[20px]'>
+                <section className='w-full flex flex-col borders overflow-hidden bg-white p-20 gap-20'>
 
                     {/* Header */}
                     <div className='flex justify-between items-center w-full'>
                         <p className='text-h5'>Liability &amp; collateral ledger</p>
 
-                        <div className='flex items-center gap-[10px]'>
+                        <div className='flex items-center gap-10'>
                             <p className='text-p text-subText'>Source 15/27</p>
                         </div>
                     </div>
@@ -113,37 +113,37 @@ export default function Vaults() {
                         <table className='w-full text-left border-collapse'>
                             <thead>
                                 <tr className='border-b border-gray-200'>
-                                    <th className='py-[10px] px-[12px] text-p font-medium text-subText whitespace-nowrap'>Time stamp</th>
-                                    <th className='py-[10px] px-[12px] text-p font-medium text-subText whitespace-nowrap'>TCAP Liability</th>
-                                    <th className='py-[10px] px-[12px] text-p font-medium text-subText whitespace-nowrap'>Verified Collateral</th>
-                                    <th className='py-[10px] px-[12px] text-p font-medium text-subText whitespace-nowrap'>Status</th>
-                                    <th className='py-[10px] px-[12px] text-p font-medium text-subText whitespace-nowrap'>Proof</th>
+                                    <th className='py-10 px-12 text-p font-medium text-subText whitespace-nowrap'>Time stamp</th>
+                                    <th className='py-10 px-12 text-p font-medium text-subText whitespace-nowrap'>TCAP Liability</th>
+                                    <th className='py-10 px-12 text-p font-medium text-subText whitespace-nowrap'>Verified Collateral</th>
+                                    <th className='py-10 px-12 text-p font-medium text-subText whitespace-nowrap'>Status</th>
+                                    <th className='py-10 px-12 text-p font-medium text-subText whitespace-nowrap'>Proof</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {pageRows.map((row) => (
                                     <tr key={row.id} className='border-b border-gray-100 hover:bg-gray-50 transition-colors'>
-                                        <td className='py-[12px] px-[12px] text-p text-gray-600 whitespace-nowrap font-mono text-sm'>
+                                        <td className='py-12 px-12 text-p text-gray-600 whitespace-nowrap font-mono text-sm'>
                                             {row.timestamp}
                                         </td>
-                                        <td className='py-[12px] px-[12px] text-p font-medium whitespace-nowrap font-mono text-sm'>
+                                        <td className='py-12 px-12 text-p font-medium whitespace-nowrap font-mono text-sm'>
                                             {row.tcapLiability}
                                         </td>
-                                        <td className='py-[12px] px-[12px] text-p font-medium whitespace-nowrap font-mono text-sm'>
+                                        <td className='py-12 px-12 text-p font-medium whitespace-nowrap font-mono text-sm'>
                                             {row.verifiedCollateral}
                                         </td>
-                                        <td className='py-[12px] px-[12px]'>
-                                            <span className={`inline-flex items-center gap-[5px] px-[10px] py-[3px] rounded-full text-sm font-medium ${STATUS_STYLES[row.status]}`}>
+                                        <td className='py-12 px-12'>
+                                            <span className={`inline-flex items-center gap-5 px-10 py-3 rounded-full text-sm font-medium ${STATUS_STYLES[row.status]}`}>
                                                 <span className={`w-[6px] h-[6px] rounded-full ${STATUS_DOT[row.status]}`} />
                                                 {row.status}
                                             </span>
                                         </td>
-                                        <td className='py-[12px] px-[12px]'>
+                                        <td className='py-12 px-12'>
                                             <a
                                                 href={row.proof}
                                                 target='_blank'
                                                 rel='noopener noreferrer'
-                                                className='text-sm text-blue-500 hover:text-blue-700 hover:underline font-mono truncate max-w-[220px] block transition-colors'
+                                                className='text-sm text-blue-500 hover:text-blue-700 hover:underline font-mono truncate max-w-220 block transition-colors'
                                                 title={row.proof}
                                             >
                                                 {row.proof}
@@ -156,7 +156,7 @@ export default function Vaults() {
                     </div>
 
                     {/* Pagination */}
-                    <div className='flex justify-between items-center w-full pt-[5px] max-[500px]:overflow-x-scroll'>
+                    <div className='flex justify-between items-center w-full pt-5 max-[500px]:overflow-x-scroll'>
                         <p className='text-p text-subText text-sm max-[850px]:hidden'>
                             Showing {rangeStart + 1} to {Math.min(rangeStart + PER_PAGE, entries.length)} of {entries.length} entries
                         </p>
@@ -166,7 +166,7 @@ export default function Vaults() {
                             <button
                                 onClick={() => setPage(p => Math.max(1, p - 1))}
                                 disabled={page === 1}
-                                className='px-[14px] py-[6px] text-sm borders rounded-[6px] text-gray-600 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors'
+                                className='px-14 py-[6px] text-sm borders rounded-[6px] text-gray-600 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors'
                             >
                                 Previous
                             </button>
@@ -185,7 +185,7 @@ export default function Vaults() {
                                         : <button
                                             key={p}
                                             onClick={() => setPage(p as number)}
-                                            className={`min-w-[32px] px-[10px] py-[6px] text-sm rounded-[6px] borders transition-colors ${
+                                            className={`min-w-[32px] px-10 py-[6px] text-sm rounded-[6px] borders transition-colors ${
                                                 page === p
                                                     ? 'bg-blue-600 text-white border-blue-600'
                                                     : 'text-gray-600 hover:bg-gray-100'
@@ -200,7 +200,7 @@ export default function Vaults() {
                             <button
                                 onClick={() => setPage(p => Math.min(totalPages, p + 1))}
                                 disabled={page === totalPages}
-                                className='px-[14px] py-[6px] text-sm borders rounded-[6px] text-gray-600 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors'
+                                className='px-14 py-[6px] text-sm borders rounded-[6px] text-gray-600 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors'
                             >
                                 Next
                             </button>

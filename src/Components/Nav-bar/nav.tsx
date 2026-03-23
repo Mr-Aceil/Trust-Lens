@@ -51,11 +51,11 @@ export default function nav({name='Page Name',
                     
     return (
         <>
-        <nav className='bg-[#f5f5f54c] backdrop-blur-sm flex justify-between items-center inpadi bordersb sticky top-0 z-[10]'>
-            <div className='flex gap-[10px] items-center'>
-                <img src={Hamburger} onClick={() => sethamburger(!hamburger)} alt="" className='w-[20px] h-[20px] hidden max-[850px]:block' />
+        <nav className='bg-[#f5f5f54c] backdrop-blur-sm flex justify-between items-center inpadi bordersb sticky top-0 z-10'>
+            <div className='flex gap-10 items-center'>
+                <img src={Hamburger} onClick={() => sethamburger(!hamburger)} alt="" className='w-20 h-20 hidden max-[850px]:block' />
                 
-                <div className='flex gap-[5px] items-center'>
+                <div className='flex gap-5 items-center'>
                     <Logo />
                     <p className='text-h5 font-medium'>{name}</p>
                 </div>
@@ -67,14 +67,14 @@ export default function nav({name='Page Name',
         </nav>
 
         {/* Hamburger */}
-        <section onClick={() => sethamburger(!hamburger)} className={`fixed flex-col w-full h-full bg-[#ffffff31] z-[12] backdrop-blur-[10px]  transition-all ease-in-out ${hamburger ? 'hidden' : 'flex'}`}>
+        <section onClick={() => sethamburger(!hamburger)} className={`fixed flex-col w-full h-full bg-[#ffffff31] z-12 backdrop-blur-[10px]  transition-all ease-in-out ${hamburger ? 'hidden' : 'flex'}`}>
         <section className={`flex flex-col w-[80%] max-w-[400px] shadow-2xl h-full bg-white justify-between `}>
             <section className='flex flex-col'>
                 <div className='flex justify-between inpadi bordersb items-center'>
-                    <div className='flex gap-[10px] items-center'>
-                        <img src={Cancel} onClick={() => sethamburger(!hamburger)} alt="" className='w-[20px] h-[20px] block' />
+                    <div className='flex gap-10 items-center'>
+                        <img src={Cancel} onClick={() => sethamburger(!hamburger)} alt="" className='w-20 h-20 block' />
                         
-                        <div className='flex gap-[5px] items-center'>
+                        <div className='flex gap-5 items-center'>
                             <Logo />
                             <p className='text-h5 font-medium'>Trust lens</p>
                         </div>
@@ -88,7 +88,7 @@ export default function nav({name='Page Name',
                 </section>
             </section>
 
-            <div className='flex gap-[5px] inpad py-[30px]'>
+            <div className='flex gap-5 inpad py-30'>
                 <p className='text-p'>Powered</p>
                 <p className='text-p'>by</p>
                 <img src={Chainlink} alt="Chainlink logo" />

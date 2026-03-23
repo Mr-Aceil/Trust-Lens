@@ -42,6 +42,37 @@
   --text-p: 1em;
   --text-small: 0.81em;
 
+  /* Spacing */
+  --spacing-3: 3px;
+  --spacing-5: 5px;
+  --spacing-6: 6px;
+  --spacing-7: 7px;
+  --spacing-8: 8px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-14: 14px;
+  --spacing-15: 15px;
+  --spacing-20: 20px;
+  --spacing-25: 25px;
+  --spacing-30: 30px;
+  --spacing-35: 35px;
+  --spacing-40: 40px;
+  --spacing-45: 45px;
+  --spacing-50: 50px;
+  --spacing-54: 54px;
+  --spacing-100: 100px;
+  --spacing-220: 220px;
+  --spacing-350: 350px;
+  --spacing-500: 500px;
+
+  /* Rounded */
+  --radius-6:6px;
+
+  /* Border */
+  --border-width-1: 1px;
+  --border-width-2: 2px;
+
+  /* Fonts */
   --font-mfont: 'Grotesque', sans-serif;
 }
 
@@ -54,27 +85,27 @@ body{
 }
 
 .bordersb{
-  @apply border-b-border border-solid border-b-[1px]
+  @apply border-b-border border-solid border-b-1
 }
 
 .borders{
-  @apply border-border border-solid border-[1px]
+  @apply border-border border-solid border-1
 }
 
 .bordersr{
-  @apply border-r-border border-solid border-r-[1px]
+  @apply border-r-border border-solid border-r-1
 }
 
 .inpad{
-  @apply px-[15px]
+  @apply px-15
 }
 
 .inpadi{
-  @apply px-[15px] py-[10px]
+  @apply px-15 py-10
 }
 
 .leftpad{
-  @apply pl-[100px]
+  @apply pl-100
 }
 
 @media (max-width: 850px) {

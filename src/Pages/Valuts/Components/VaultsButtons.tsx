@@ -9,7 +9,7 @@ type Props={
 
 export default function VaultsButtons({name='no name', bg, text, hover='hover:bg-buttonh'}:Props) {
     return (
-        <button className={`px-[10px] py-[15px] max-[500px]:py-[5px] grow-[1] text-p max-[500px]:text-small ${bg} ${text} ${hover} borders`}>
+        <button className={`px-10 py-15 max-[500px]:py-5 grow text-p max-[500px]:text-small ${bg} ${text} ${hover} borders`}>
             {name}
         </button>
     )

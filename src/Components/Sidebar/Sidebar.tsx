@@ -47,7 +47,7 @@ export default function Sidebar({
                             <path d="M11.625 15.513C11.5083 15.471 11.4 15.4 11.3 15.3L7.7 11.7C7.5 11.5 7.404 11.2667 7.412 11C7.42 10.7333 7.516 10.5 7.7 10.3C7.9 10.1 8.13767 9.996 8.413 9.988C8.68833 9.98 8.92567 10.0757 9.125 10.275L11 12.15V5C11 4.71667 11.096 4.47934 11.288 4.288C11.48 4.09667 11.7173 4.00067 12 4C12.2827 3.99934 12.5203 4.09534 12.713 4.288C12.9057 4.48067 13.0013 4.718 13 5V12.15L14.875 10.275C15.075 10.075 15.3127 9.979 15.588 9.987C15.8633 9.995 16.1007 10.0993 16.3 10.3C16.4833 10.5 16.5793 10.7333 16.588 11C16.5967 11.2667 16.5007 11.5 16.3 11.7L12.7 15.3C12.6 15.4 12.4917 15.471 12.375 15.513C12.2583 15.555 12.1333 15.5757 12 15.575C11.8667 15.5743 11.7417 15.5537 11.625 15.513ZM6 20C5.45 20 4.97933 19.8043 4.588 19.413C4.19667 19.0217 4.00067 18.5507 4 18V16C4 15.7167 4.096 15.4793 4.288 15.288C4.48 15.0967 4.71733 15.0007 5 15C5.28267 14.9993 5.52033 15.0953 5.713 15.288C5.90567 15.4807 6.00133 15.718 6 16V18H18V16C18 15.7167 18.096 15.4793 18.288 15.288C18.48 15.0967 18.7173 15.0007 19 15C19.2827 14.9993 19.5203 15.0953 19.713 15.288C19.9057 15.4807 20.0013 15.718 20 16V18C20 18.55 19.8043 19.021 19.413 19.413C19.0217 19.805 18.5507 20.0007 18 20H6Z" fill="#0064CA"/>
                             </svg>
 
-    const Arrow= <svg className={`${downloadOptions ? 'rotate-0' : 'rotate-[180deg]'} transition-all ease-in-out duration-500`}  width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    const Arrow= <svg className={`${downloadOptions ? 'rotate-0' : 'rotate-180'} transition-all ease-in-out duration-500`}  width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_3243_1899)">
                             <path d="M6.57999 9.54801L5.51999 8.48701L11.297 2.70801C11.3896 2.61486 11.4996 2.54093 11.6209 2.49048C11.7421 2.44003 11.8722 2.41406 12.0035 2.41406C12.1348 2.41406 12.2648 2.44003 12.3861 2.49048C12.5073 2.54093 12.6174 2.61486 12.71 2.70801L18.49 8.48701L17.43 9.54701L12.005 4.12301L6.57999 9.54801Z" fill="black"/>
                             </g>
@@ -63,14 +63,14 @@ export default function Sidebar({
                     </svg>
 
     return (
-        <div className='fixed top-0 left-0 z-[11] max-[850px]:hidden'>
+        <div className='fixed top-0 left-0 z-11 max-[850px]:hidden'>
         <motion.section 
             onMouseEnter={() => setIsHovering(false)}
             onMouseLeave={() => setIsHovering(true)}
             initial={false}
             animate={{ width: isHovering ? 100 : 280 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="bg-white h-[100vh] flex flex-col p-[1.25em] justify-between overflow-hidden bordersr"
+            className="bg-white h-full flex flex-col p-[1.25em] justify-between overflow-hidden bordersr"
         >
             <section className={`flex gap-[3.125em] flex-col ${isHovering ? 'items-center' : 'items-start'}`}>
                 {/* Logo Section */}
@@ -82,7 +82,7 @@ export default function Sidebar({
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -10 }}
-                                className="text-h4 font-mfont font-[400] whitespace-nowrap"
+                                className="text-h4 font-mfont font-medium whitespace-nowrap"
                             >
                                 Trust lens
                             </motion.p>
@@ -91,7 +91,7 @@ export default function Sidebar({
                 </div>
 
                 {/* Pages Section */}
-                <div className="flex flex-col gap-[5px]">
+                <div className="flex flex-col gap-5">
                     <Pages name="Overview" link="/" logo={Overviewicon} bg={obg} text={otext} hover={ohover} hide={isHovering ? 'hidden' : 'block'} />
                     <Pages name="Vaults" link="/vaults" logo={Vaults} bg={vbg} text={vtext} hover={vhover} hide={isHovering ? 'hidden' : 'block'} />
                     <Pages name="Analysis" link="/analysis" logo={Analysis} bg={abg} text={atext} hover={ahover} hide={isHovering ? 'hidden' : 'block'} width={isHovering ? 'w-fit' : 'w-[250px]'} />
@@ -99,11 +99,11 @@ export default function Sidebar({
             </section>
 
             {/* Bottom Section */}
-            <section className={`flex flex-col gap-[30px] w-full overflow-hidden ${isHovering ? 'items-center' : 'items-start'}`}>
+            <section className={`flex flex-col gap-30 w-full overflow-hidden ${isHovering ? 'items-center' : 'items-start'}`}>
                 {/* Download Audit */}
-                <section className='flex flex-col gap-[20px]'>
-                    <div onClick={() => setDownloadOptions(!downloadOptions)} className={`cursor-pointer flex gap-[5px] items-center justify-between ${isHovering ? 'w-fit' : 'w-full'}`}>
-                        <div className="flex gap-[5px] items-center">
+                <section className='flex flex-col gap-20'>
+                    <div onClick={() => setDownloadOptions(!downloadOptions)} className={`cursor-pointer flex gap-5 items-center justify-between ${isHovering ? 'w-fit' : 'w-full'}`}>
+                        <div className="flex gap-5 items-center">
                             {DownloadButton}
                             <AnimatePresence>
                                 {!isHovering && (
@@ -130,7 +130,7 @@ export default function Sidebar({
                 </section>
 
                 {/* Powered by */}
-                <div className="flex items-center gap-[5px] min-h-[20px]">
+                <div className="flex items-center gap-5 min-h-20">
                     <AnimatePresence>
                         {!isHovering && (
                             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-p font-mfont text-black whitespace-nowrap">

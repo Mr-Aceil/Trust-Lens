@@ -16,7 +16,7 @@ const Help = <svg  height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www
 
 export default function OverviewCards({name= 'choose name', amount= "0", Percentage= "0", time='from last month'}: Props) {
     return (
-        <div className='w-full bg-white borders px-[15px] py-[20px] flex flex-col gap-[5px]'>
+        <div className='w-full bg-white borders px-15 py-20 flex flex-col gap-5'>
             <div className='flex justify-between items-center'>
                 <p className='text-p'>{name}</p>
                 {Help}

@@ -58,12 +58,12 @@ export default function Overview() {
         <>
         <Sidebar obg='bg-blue' oicon='white' otext='text-white' ohover='hover:none'/>
 
-        <section className='flex flex-col w-full leftpad gap-[30px] pb-[20px]'>
+        <section className='flex flex-col w-full leftpad gap-30 pb-20'>
             <Navbar name='Overview' obg='bg-blue' otext='text-white' oicon='white'/>
 
-            <section className='flex flex-col gap-[5px] inpad'>
+            <section className='flex flex-col gap-5 inpad'>
                 {/* First section */}
-                <section className='gap-[5px] grid 
+                <section className='gap-5 grid 
                                     grid-cols-[repeat(auto-fit,minmax(300px,1fr))]
                                     max-[500px]:flex
                                     max-[500px]:flex-col
@@ -75,20 +75,20 @@ export default function Overview() {
                 </section>
 
                 {/* Global solvency gauge section */}
-                <section className='flex gap-[5px] w-full max-[1160px]:flex-col'>
-                    <section className='w-full flex flex-col items-center borders bg-white px-[20px] py-[20px] gap-[20px]'>
+                <section className='flex gap-5 w-full max-[1160px]:flex-col'>
+                    <section className='w-full flex flex-col items-center borders bg-white px-20 py-20 gap-20'>
                         <div className='flex justify-between w-full'>
                             <p className='text-h5 font-medium'>Global solvency gauge</p>
                             
                             {/* Live */}
-                            <div className='rounded-[5px] bg-green-200 flex gap-[5px] items-center px-[15px]'>
-                                <hr className='w-[7px] h-[7px] rounded-full bg-green-800'/>
+                            <div className='rounded-[5px] bg-green-200 flex gap-5 items-center px-15'>
+                                <hr className='w-7 h-7 rounded-full bg-green-800'/>
                                 <p className='text-p text-green-800'>Live</p>
                             </div>
                         </div>
 
                         {/* The Gauge */}
-                        <div className='flex w-full max-w-[500px] max-h-[350px] flex flex-col items-center'>
+                        <div className='w-full max-w-500 max-h-350 flex flex-col items-center'>
                             <GaugeComponent
                                 value={85}
                                 type="semicircle"
@@ -125,8 +125,8 @@ export default function Overview() {
                     </section>
 
                     {/* Chain cards */}
-                    <div className='flex flex-col gap-[5px] w-full max-w-[500px] max-[1160px]:max-w-none'>
-                        <div className='bg-white borders px-[15px] py-[10px]'>
+                    <div className='flex flex-col gap-5 w-full max-w-500 max-[1160px]:max-w-none'>
+                        <div className='bg-white borders px-15 py-10'>
                             <p className='text-h5 w-fit'>Chain cards</p>
                         </div>
                         <ChainCards link='https://etherscan.io/address/0x321C2fE4446C7c963dc41Dd58879AF648838f98D' ChainName='Ethereum Mainnet' Verify='Verify on Etherscan'/>
@@ -136,7 +136,7 @@ export default function Overview() {
                 </section>
 
                 {/* ── Verification Ledger ───────────────────────────────────── */}
-                <section className='w-full flex flex-col borders overflow-hidden bg-white px-[20px] py-[20px] gap-[20px]'>
+                <section className='w-full flex flex-col borders overflow-hidden bg-white px-20 py-20 gap-20'>
 
                     {/* Header */}
                     <div className='flex justify-between items-center w-full'>
@@ -149,40 +149,40 @@ export default function Overview() {
                         <table className='w-full text-left border-collapse'>
                             <thead>
                                 <tr className='border-b border-gray-200'>
-                                    <th className='py-[10px] px-[12px] text-p font-medium text-subText whitespace-nowrap'>Time stamp</th>
-                                    <th className='py-[10px] px-[12px] text-p font-medium text-subText whitespace-nowrap'>Chainlink feed ID</th>
-                                    <th className='py-[10px] px-[12px] text-p font-medium text-subText whitespace-nowrap'>Verified reserve value</th>
-                                    <th className='py-[10px] px-[12px] text-p font-medium text-subText whitespace-nowrap'>Status</th>
-                                    <th className='py-[10px] px-[12px] text-p font-medium text-subText whitespace-nowrap'>Proof</th>
+                                    <th className='py-10 px-12 text-p font-medium text-subText whitespace-nowrap'>Time stamp</th>
+                                    <th className='py-10 px-12 text-p font-medium text-subText whitespace-nowrap'>Chainlink feed ID</th>
+                                    <th className='py-10 px-12 text-p font-medium text-subText whitespace-nowrap'>Verified reserve value</th>
+                                    <th className='py-10 px-12 text-p font-medium text-subText whitespace-nowrap'>Status</th>
+                                    <th className='py-10 px-12 text-p font-medium text-subText whitespace-nowrap'>Proof</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {pageRows.map((row) => (
                                     <tr key={row.id} className='border-b border-gray-100 hover:bg-gray-50 transition-colors'>
-                                        <td className='py-[12px] px-[12px] text-p text-gray-600 whitespace-nowrap font-mono text-sm'>
+                                        <td className='py-12 px-12 text-p text-gray-600 whitespace-nowrap font-mono text-sm'>
                                             {row.timestamp}
                                         </td>
-                                        <td className='py-[12px] px-[12px] text-p whitespace-nowrap font-mono text-sm'>
+                                        <td className='py-12 px-12 text-p whitespace-nowrap font-mono text-sm'>
                                             {row.chainlinkFeedId}
                                         </td>
-                                        <td className='py-[12px] px-[12px] text-p font-medium whitespace-nowrap font-mono text-sm'>
+                                        <td className='py-12 px-12 text-p font-medium whitespace-nowrap font-mono text-sm'>
                                             {row.verifiedReserveValue}
                                         </td>
-                                        <td className='py-[12px] px-[12px]'>
-                                            <span className={`inline-flex items-center gap-[5px] px-[10px] py-[3px] rounded-full text-sm font-medium ${STATUS_STYLES[row.status]}`}>
-                                                <span className={`w-[6px] h-[6px] rounded-full ${
+                                        <td className='py-12 px-12'>
+                                            <span className={`inline-flex items-center gap-5 px-10 py-3 rounded-full text-sm font-medium ${STATUS_STYLES[row.status]}`}>
+                                                <span className={`w-6 h-6 rounded-full ${
                                                     row.status === 'Success' ? 'bg-green-600' :
                                                     row.status === 'Pending' ? 'bg-yellow-600' : 'bg-red-600'
                                                 }`} />
                                                 {row.status}
                                             </span>
                                         </td>
-                                        <td className='py-[12px] px-[12px]'>
+                                        <td className='py-12 px-12'>
                                             <a
                                                 href={row.proof}
                                                 target='_blank'
                                                 rel='noopener noreferrer'
-                                                className='text-sm text-blue-500 hover:text-blue-700 hover:underline font-mono truncate max-w-[220px] block transition-colors'
+                                                className='text-sm text-blue-500 hover:text-blue-700 hover:underline font-mono truncate max-w-220 block transition-colors'
                                                 title={row.proof}
                                             >
                                                 {row.proof}
@@ -195,17 +195,17 @@ export default function Overview() {
                     </div>
 
                     {/* Pagination */}
-                    <div className='flex justify-between items-center w-full pt-[5px] max-[500px]:overflow-x-scroll'>
+                    <div className='flex justify-between items-center w-full pt-5 max-[500px]:overflow-x-scroll'>
                         <p className='text-p text-subText text-sm max-[850px]:hidden'>
                             Showing {rangeStart + 1} to {Math.min(rangeStart + PER_PAGE, entries.length)} of {entries.length} entries
                         </p>
 
-                        <div className='flex items-center gap-[8px]'>
+                        <div className='flex items-center gap-8'>
                             {/* Previous */}
                             <button
                                 onClick={() => setPage(p => Math.max(1, p - 1))}
                                 disabled={page === 1}
-                                className='px-[14px] py-[6px] text-sm borders rounded-[6px] text-gray-600 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors'
+                                className='px-14 py-6 text-sm borders rounded-6 text-gray-600 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors'
                             >
                                 Previous
                             </button>
@@ -224,7 +224,7 @@ export default function Overview() {
                                         : <button
                                             key={p}
                                             onClick={() => setPage(p as number)}
-                                            className={`min-w-[32px] px-[10px] py-[6px] text-sm rounded-[6px] borders transition-colors ${
+                                            className={`min-w-[32px] px-10 py-[6px] text-sm rounded-6 borders transition-colors ${
                                                 page === p
                                                     ? 'bg-blue-600 text-white border-blue-600'
                                                     : 'text-gray-600 hover:bg-gray-100'
@@ -239,7 +239,7 @@ export default function Overview() {
                             <button
                                 onClick={() => setPage(p => Math.min(totalPages, p + 1))}
                                 disabled={page === totalPages}
-                                className='px-[14px] py-[6px] text-sm borders rounded-[6px] text-gray-600 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors'
+                                className='px-14 py-[6px] text-sm borders rounded-6 text-gray-600 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors'
                             >
                                 Next
                             </button>

@@ -12,9 +12,9 @@ type Props={
 
 export default function ChainCards({ChainLogo=Eth, link, ChainName='Chain name', Verify='Verify on Etherscan/ Arbiscan/ Basescan', Amount= '$0', SubAmount= '$0', }:Props) {
     return (
-        <div className='bg-white borders p-[15px] w-full gap-[10px] flex flex-col'>
-            <div className='flex gap-[10px] justify-between items-center w-full'>
-                <img src={ChainLogo} alt="Chain Logo" className='w-[40px] h-[40px]' />
+        <div className='bg-white borders p-15 w-full gap-10 flex flex-col'>
+            <div className='flex gap-10 justify-between items-center w-full'>
+                <img src={ChainLogo} alt="Chain Logo" className='w-40 h-40' />
 
                 <div className='flex flex-col w-full'>
                     <div className='flex justify-between items-center w-fill'>
@@ -29,7 +29,7 @@ export default function ChainCards({ChainLogo=Eth, link, ChainName='Chain name',
                 </div>
             </div>
 
-            <a href= {link} target='_blank' className='bg-mainbg flex items-center justify-center hover:bg-blue2 text-p text-subText borders w-full p-[10px]'>
+            <a href= {link} target='_blank' className='bg-mainbg flex items-center justify-center hover:bg-blue2 text-p text-subText borders w-full p-10'>
                 {Verify}
             </a>
         </div>

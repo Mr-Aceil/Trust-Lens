@@ -10,7 +10,7 @@ type Props={
 
 export default function DownloadOptions({display}:Props) {
     return (
-        <section className={`${display} flex-col w-full transition-all ease-in-out duration-[500ms] `}>
+        <section className={`${display} flex-col w-full transition-all ease-in-out duration-500 `}>
             <Options name='PDF' Icons={Pdf}/>
             <Options name='PNG' Icons={Png}/>
             <Options name='JPEG' Icons={Jpeg}/>

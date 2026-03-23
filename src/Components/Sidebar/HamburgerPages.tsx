@@ -11,7 +11,7 @@ type Props={
 
 export default function HamburgerPages({name='Page name', to, bg, textColor, icon}:Props) {
     return (
-        <Link to={to} className={`flex gap-[10px] inpad py-[20px] bordersb items-center  ${bg}`}>
+        <Link to={to} className={`flex gap-10 inpad py-20 bordersb items-center  ${bg}`}>
             {icon}
             <p className={`text-p font-medium ${textColor}`}>{name}</p>  
         </Link>
