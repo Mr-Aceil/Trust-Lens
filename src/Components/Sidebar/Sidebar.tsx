@@ -3,33 +3,39 @@ import Logo from '../../../src/assets/Logo/Logo.png'
 import Pages from '../../Components/Sidebar/Pages'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
-import DownloadOptions from './DownloadOptions'
 
 type Props={
     obg?: string;
     vbg?: string;
     abg?: string;
+    sbg?: string;
+    hbg?: string;
     oicon?: string;
     vicon?: string;
     aicon?: string;
+    sicon?: string;
+    hicon?: string;
     otext?: string;
     vtext?: string;
     atext?: string;
+    stext?: string;
+    htext?: string;
     ohover?: string;
     vhover?: string;
     ahover?: string;
+    shover?: string;
+    hhover?: string;
 }
 
 export default function Sidebar({
-    obg, vbg, abg,
-    oicon='black', aicon='black', vicon='black',
-    otext='black', atext='black', vtext='black',
-    ohover, ahover, vhover,
+    obg, vbg, abg, sbg, hbg,
+    oicon='black', aicon='black', vicon='black', sicon='black', hicon='black',
+    otext='black', atext='black', vtext='black', stext='black', htext='black',
+    ohover, ahover, vhover, shover, hhover,
 }: Props) {
 
     // Set to false initially so it starts expanded, or true for collapsed
     const [isHovering, setIsHovering] = useState(true)
-    const [downloadOptions, setDownloadOptions] = useState(true)
     
     const Overviewicon= <svg width="20" height="20" viewBox="0 0 20 20" fill={oicon} xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.6667 15.8333V8.74996C16.6667 8.62059 16.6366 8.49299 16.5787 8.37728C16.5208 8.26157 16.4368 8.16091 16.3333 8.08329L10.5 3.70829C10.3558 3.60011 10.1803 3.54163 10 3.54163C9.8197 3.54163 9.64426 3.60011 9.50001 3.70829L3.66668 8.08329C3.56318 8.16091 3.47918 8.26157 3.42132 8.37728C3.36346 8.49299 3.33334 8.62059 3.33334 8.74996V15.8333C3.33334 16.0543 3.42114 16.2663 3.57742 16.4225C3.7337 16.5788 3.94566 16.6666 4.16668 16.6666H7.50001C7.72102 16.6666 7.93299 16.5788 8.08927 16.4225C8.24555 16.2663 8.33334 16.0543 8.33334 15.8333V13.3333C8.33334 13.1123 8.42114 12.9003 8.57742 12.744C8.7337 12.5878 8.94566 12.5 9.16668 12.5H10.8333C11.0544 12.5 11.2663 12.5878 11.4226 12.744C11.5789 12.9003 11.6667 13.1123 11.6667 13.3333V15.8333C11.6667 16.0543 11.7545 16.2663 11.9108 16.4225C12.067 16.5788 12.279 16.6666 12.5 16.6666H15.8333C16.0544 16.6666 16.2663 16.5788 16.4226 16.4225C16.5789 16.2663 16.6667 16.0543 16.6667 15.8333Z" fill={oicon} stroke={oicon} stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
@@ -43,24 +49,14 @@ export default function Sidebar({
                     <path d="M10 1.875C10 1.70924 10.0658 1.55027 10.1831 1.43306C10.3003 1.31585 10.4592 1.25 10.625 1.25C11.692 1.25 12.7485 1.46016 13.7343 1.86848C14.7201 2.2768 15.6158 2.87528 16.3702 3.62976C17.1247 4.38423 17.7232 5.27993 18.1315 6.2657C18.5398 7.25147 18.75 8.30801 18.75 9.375C18.75 9.54076 18.6841 9.69973 18.5669 9.81694C18.4497 9.93415 18.2908 10 18.125 10H10.625C10.4592 10 10.3003 9.93415 10.1831 9.81694C10.0658 9.69973 10 9.54076 10 9.375V1.875ZM8.75 4.4025C8.75 4.31568 8.73192 4.22981 8.6969 4.15036C8.66188 4.07092 8.61069 3.99964 8.5466 3.94108C8.4825 3.88251 8.40691 3.83794 8.32464 3.81021C8.24236 3.78247 8.15522 3.77219 8.06875 3.78C6.6493 3.90942 5.29613 4.44063 4.16772 5.31141C3.03931 6.1822 2.1824 7.3565 1.69735 8.69676C1.21231 10.037 1.11922 11.4877 1.42899 12.879C1.73876 14.2703 2.43856 15.5445 3.44643 16.5523C4.45429 17.5602 5.72847 18.26 7.11974 18.5698C8.511 18.8795 9.96173 18.7864 11.302 18.3014C12.6423 17.8164 13.8165 16.9594 14.6873 15.831C15.5581 14.7026 16.0893 13.3494 16.2187 11.93C16.2264 11.8437 16.216 11.7568 16.1882 11.6748C16.1605 11.5928 16.116 11.5174 16.0576 11.4534C15.9992 11.3895 15.9281 11.3384 15.8489 11.3034C15.7697 11.2684 15.6841 11.2502 15.5975 11.25H8.75V4.4025Z" fill={aicon}/>
                     </svg>
 
-    const DownloadButton= <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11.625 15.513C11.5083 15.471 11.4 15.4 11.3 15.3L7.7 11.7C7.5 11.5 7.404 11.2667 7.412 11C7.42 10.7333 7.516 10.5 7.7 10.3C7.9 10.1 8.13767 9.996 8.413 9.988C8.68833 9.98 8.92567 10.0757 9.125 10.275L11 12.15V5C11 4.71667 11.096 4.47934 11.288 4.288C11.48 4.09667 11.7173 4.00067 12 4C12.2827 3.99934 12.5203 4.09534 12.713 4.288C12.9057 4.48067 13.0013 4.718 13 5V12.15L14.875 10.275C15.075 10.075 15.3127 9.979 15.588 9.987C15.8633 9.995 16.1007 10.0993 16.3 10.3C16.4833 10.5 16.5793 10.7333 16.588 11C16.5967 11.2667 16.5007 11.5 16.3 11.7L12.7 15.3C12.6 15.4 12.4917 15.471 12.375 15.513C12.2583 15.555 12.1333 15.5757 12 15.575C11.8667 15.5743 11.7417 15.5537 11.625 15.513ZM6 20C5.45 20 4.97933 19.8043 4.588 19.413C4.19667 19.0217 4.00067 18.5507 4 18V16C4 15.7167 4.096 15.4793 4.288 15.288C4.48 15.0967 4.71733 15.0007 5 15C5.28267 14.9993 5.52033 15.0953 5.713 15.288C5.90567 15.4807 6.00133 15.718 6 16V18H18V16C18 15.7167 18.096 15.4793 18.288 15.288C18.48 15.0967 18.7173 15.0007 19 15C19.2827 14.9993 19.5203 15.0953 19.713 15.288C19.9057 15.4807 20.0013 15.718 20 16V18C20 18.55 19.8043 19.021 19.413 19.413C19.0217 19.805 18.5507 20.0007 18 20H6Z" fill="#0064CA"/>
-                            </svg>
+    const Help= <svg width="20" height="20" viewBox="0 0 24 24" fill={hicon} xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3.75C8.436 3.75 5.75 6.205 5.75 9V10.512C5.83313 10.5045 5.91654 10.5005 6 10.5H8C8.39782 10.5 8.77936 10.658 9.06066 10.9393C9.34196 11.2206 9.5 11.6022 9.5 12V17C9.5 17.3978 9.34196 17.7794 9.06066 18.0607C8.77936 18.342 8.39782 18.5 8 18.5H6C5.33696 18.5 4.70107 18.2366 4.23223 17.7678C3.76339 17.2989 3.5 16.663 3.5 16V13C3.5 12.3 3.787 11.668 4.25 11.215V9C4.25 5.168 7.832 2.25 12 2.25C16.168 2.25 19.75 5.168 19.75 9V11.215C19.9874 11.4477 20.176 11.7254 20.3048 12.0319C20.4336 12.3384 20.5 12.6675 20.5 13V16C20.5 16.3283 20.4353 16.6534 20.3097 16.9567C20.1841 17.26 19.9999 17.5356 19.7678 17.7678C19.5356 17.9999 19.26 18.1841 18.9567 18.3097C18.6534 18.4353 18.3283 18.5 18 18.5H16C15.6022 18.5 15.2206 18.342 14.9393 18.0607C14.658 17.7794 14.5 17.3978 14.5 17V12C14.5 11.6022 14.658 11.2206 14.9393 10.9393C15.2206 10.658 15.6022 10.5 16 10.5H18C18.0847 10.5 18.168 10.504 18.25 10.512V9C18.25 6.205 15.564 3.75 12 3.75Z" fill={hicon}/>
+                </svg>
 
-    const Arrow= <svg className={`${downloadOptions ? 'rotate-0' : 'rotate-180'} transition-all ease-in-out duration-500`}  width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_3243_1899)">
-                            <path d="M6.57999 9.54801L5.51999 8.48701L11.297 2.70801C11.3896 2.61486 11.4996 2.54093 11.6209 2.49048C11.7421 2.44003 11.8722 2.41406 12.0035 2.41406C12.1348 2.41406 12.2648 2.44003 12.3861 2.49048C12.5073 2.54093 12.6174 2.61486 12.71 2.70801L18.49 8.48701L17.43 9.54701L12.005 4.12301L6.57999 9.54801Z" fill="black"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_3243_1899">
-                            <rect width="12" height="24" fill="white" transform="matrix(0 -1 1 0 0 12)"/>
-                            </clipPath>
-                            </defs>
-                            </svg>
-
-    const Chainlink= <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8.67 0L6.835 1.055L1.835 3.945L0 5V15L1.835 16.055L6.88083 18.945L8.71583 20L10.5508 18.945L15.505 16.055L17.34 15V5L15.505 3.945L10.505 1.055L8.67 0ZM3.67 12.89V7.11L8.67 4.22L13.67 7.11V12.89L8.67 15.78L3.67 12.89Z" fill="#007DFC"/>
+    const Settings= <svg width="20" height="20" viewBox="0 0 24 24" fill={sicon} xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.96 21C10.7274 21 10.5257 20.9237 10.355 20.771C10.1837 20.6183 10.0774 20.428 10.036 20.2L9.77302 18.108C9.45369 18.0113 9.10835 17.86 8.73702 17.654C8.36635 17.4473 8.05069 17.226 7.79002 16.99L5.87502 17.814C5.66369 17.9073 5.44902 17.9173 5.23102 17.844C5.01302 17.7707 4.84502 17.6323 4.72702 17.429L3.64802 15.57C3.53002 15.3667 3.49535 15.154 3.54402 14.932C3.59269 14.71 3.70869 14.528 3.89202 14.386L5.56402 13.136C5.53402 12.9547 5.50969 12.7683 5.49102 12.577C5.47102 12.385 5.46102 12.1987 5.46102 12.018C5.46102 11.85 5.47102 11.6733 5.49102 11.488C5.50969 11.3027 5.53402 11.094 5.56402 10.862L3.89202 9.612C3.70869 9.47 3.59602 9.285 3.55402 9.057C3.51202 8.829 3.54969 8.613 3.66702 8.409L4.72702 6.609C4.84502 6.41767 5.01302 6.28234 5.23102 6.203C5.44902 6.12367 5.66369 6.13067 5.87502 6.224L7.77102 7.028C8.06969 6.77934 8.39302 6.555 8.74102 6.355C9.08769 6.155 9.42535 6.00034 9.75402 5.891L10.037 3.799C10.0777 3.571 10.1837 3.38067 10.355 3.228C10.5264 3.07534 10.728 2.99934 10.96 3H13.04C13.2727 3 13.4744 3.07634 13.645 3.229C13.8164 3.38167 13.9227 3.572 13.964 3.8L14.227 5.912C14.6104 6.04667 14.949 6.201 15.243 6.375C15.537 6.549 15.84 6.767 16.152 7.029L18.144 6.225C18.356 6.13167 18.571 6.12467 18.789 6.204C19.007 6.28334 19.1747 6.41867 19.292 6.61L20.352 8.429C20.47 8.633 20.5047 8.84567 20.456 9.067C20.4074 9.28834 20.2914 9.47067 20.108 9.614L18.36 10.92C18.4147 11.1267 18.4454 11.3163 18.452 11.489C18.4587 11.6617 18.462 11.8317 18.462 11.999C18.462 12.1543 18.4554 12.318 18.442 12.49C18.4294 12.6627 18.4 12.8713 18.354 13.116L20.044 14.386C20.2274 14.528 20.3467 14.71 20.402 14.932C20.4574 15.154 20.426 15.3667 20.308 15.57L19.242 17.409C19.1247 17.613 18.9537 17.7513 18.729 17.824C18.5044 17.8973 18.2864 17.8873 18.075 17.794L16.152 16.97C15.8407 17.232 15.5274 17.4563 15.212 17.643C14.8967 17.8297 14.5684 17.978 14.227 18.088L13.963 20.199C13.9224 20.427 13.8164 20.6173 13.645 20.77C13.4737 20.9227 13.272 20.9993 13.04 21H10.96ZM11.973 14.5C12.6704 14.5 13.2614 14.2577 13.746 13.773C14.2307 13.2883 14.473 12.6973 14.473 12C14.473 11.3027 14.2307 10.7117 13.746 10.227C13.2614 9.74234 12.6704 9.5 11.973 9.5C11.2717 9.5 10.6797 9.74234 10.197 10.227C9.71435 10.7117 9.47302 11.3027 9.47302 12C9.47302 12.6973 9.71435 13.2883 10.197 13.773C10.6797 14.2577 11.2717 14.5 11.973 14.5Z" fill={sicon}/>
                     </svg>
+
 
     return (
         <div className='fixed top-0 left-0 z-11 max-[850px]:hidden'>
@@ -70,9 +66,9 @@ export default function Sidebar({
             initial={false}
             animate={{ width: isHovering ? 100 : 280 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="bg-white h-viewport flex flex-col p-[1.25em] justify-between overflow-hidden bordersr"
+            className={`bg-white h-viewport flex flex-col p-[1.25em] justify-between overflow-hidden bordersr`}
         >
-            <section className={`flex gap-[3.125em] flex-col ${isHovering ? 'items-center' : 'items-start'}`}>
+            <section className={`flex gap-[3.125em] flex-col `}>
                 {/* Logo Section */}
                 <div className="flex gap-[1em] items-center h-[3em] overflow-hidden">
                     <img src={Logo} className="h-[2em] min-w-[2em]" alt="Trust lens logo" />
@@ -92,63 +88,17 @@ export default function Sidebar({
 
                 {/* Pages Section */}
                 <div className="flex flex-col gap-5">
-                    <Pages name="Overview" link="/" logo={Overviewicon} bg={obg} text={otext} hover={ohover} hide={isHovering ? 'hidden' : 'block'} />
-                    <Pages name="Vaults" link="/vaults" logo={Vaults} bg={vbg} text={vtext} hover={vhover} hide={isHovering ? 'hidden' : 'block'} />
-                    <Pages name="Analysis" link="/analysis" logo={Analysis} bg={abg} text={atext} hover={ahover} hide={isHovering ? 'hidden' : 'block'} width={isHovering ? 'w-fit' : 'w-[250px]'} />
+                    <Pages name="Overview" link="/" logo={Overviewicon} bg={obg} text={otext} hover={ohover} hide={isHovering ? 'hidden' : 'block'} width={isHovering ? 'w-fit' : 'w-[250px]'} others={isHovering ?'justify-center':'justify-start'}  />
+                    <Pages name="Vaults" link="/vaults" logo={Vaults} bg={vbg} text={vtext} hover={vhover} width={isHovering ? 'w-fit' : 'w-[250px]'}  hide={isHovering ? 'hidden' : 'block'} others={isHovering ?'justify-center':'justify-start'}/>
+                    <Pages name="Analysis" link="/analysis" logo={Analysis} bg={abg} text={atext} width={isHovering ? 'w-fit' : 'w-[250px]'} hover={ahover} hide={isHovering ? 'hidden' : 'block'}  others={isHovering ?'justify-center':'justify-start'}/>
                 </div>
             </section>
 
             {/* Bottom Section */}
-            <section className={`flex flex-col gap-30 w-full overflow-hidden ${isHovering ? 'items-center' : 'items-start'}`}>
-                {/* Download Audit */}
-                <section className='flex flex-col gap-20'>
-                    <div onClick={() => setDownloadOptions(!downloadOptions)} className={`cursor-pointer flex gap-5 items-center justify-between ${isHovering ? 'w-fit' : 'w-full'}`}>
-                        <div className="flex gap-5 items-center">
-                            {DownloadButton}
-                            <AnimatePresence>
-                                {!isHovering && (
-                                    <motion.p 
-                                        initial={{ opacity: 0, width: 0 }}
-                                        animate={{ opacity: 1, width: "auto" }}
-                                        exit={{ opacity: 0, width: 0 }}
-                                        className="font-mfont text-p whitespace-nowrap overflow-hidden"
-                                    >
-                                        Download Audit
-                                    </motion.p>
-                                )}
-                            </AnimatePresence>
-                        </div>
-                        
-                        {!isHovering && (
-                            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                                {Arrow}
-                            </motion.div>
-                        )}
-                    </div>
-
-                    <DownloadOptions display={downloadOptions ? 'hidden' : 'flex'} />
-                </section>
-
-                {/* Powered by */}
-                <div className="flex items-center gap-5 min-h-20">
-                    <AnimatePresence>
-                        {!isHovering && (
-                            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-p font-mfont text-black whitespace-nowrap">
-                                Powered
-                            </motion.p>
-                        )}
-                    </AnimatePresence>
-                    <p className="text-p font-mfont text-black">by</p>
-                    {Chainlink}
-                    <AnimatePresence>
-                        {!isHovering && (
-                            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-p font-mfont text-blue whitespace-nowrap">
-                                Chainlink
-                            </motion.p>
-                        )}
-                    </AnimatePresence>
-                </div>
-            </section>
+            <div className="flex flex-col gap-5 w-full">
+                <Pages name="Settings" link='/settings' logo={Settings} bg={sbg} text={stext} hover={shover} hide={isHovering ? 'hidden' : 'block'} others={isHovering ?'justify-center':'justify-start'} width={isHovering ? 'w-fit' : 'w-[250px]'} />
+                <Pages name="Help Center" link='/help' logo={Help} bg={hbg} text={htext} hover={hhover} hide={isHovering ? 'hidden' : 'block'} others={isHovering ?'justify-center':'justify-start'}  width={isHovering ? 'w-fit' : 'w-[250px]'}/>
+            </div>
         </motion.section>
         </div>
     )

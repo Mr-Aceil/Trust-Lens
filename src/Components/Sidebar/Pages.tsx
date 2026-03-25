@@ -10,6 +10,7 @@ type Props={
     link?: string;
     hide?: string;
     width?: string;
+    others?: string;
 }
 
 export default function Pages({
@@ -20,12 +21,13 @@ export default function Pages({
     link, 
     width , 
     hide, 
+    others, 
     logo,}: Props) {
     
 
     return (
         <Link to={link ?? '#'}>
-            <div className={`${width} transition-all duration-300 ease-in-out h-54 flex gap-[1em] items-center ${hover} ${text} p-[1em] rounded-[1em] ${bg}`}>
+            <div className={` transition-all items-center duration-300 ease-in-out h-54 flex gap-[1em] p-[1em] rounded-[1em] ${others}  ${hover} ${text} ${width} ${bg}`}>
                 {logo}
                 <p className={` transition-all duration-300 ease-in-out text-p font-mfont ${hide}`}>{name}</p>
             </div>
