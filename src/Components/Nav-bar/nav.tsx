@@ -7,7 +7,6 @@ import Logo from '../logo'
 import Pages from '../Sidebar/HamburgerPages'
 import DownloadButton from '../../assets/Download-Audit/material-symbols_download-rounded.svg'
 import DownlaodOptions1 from '@/Components/DownloadOptions/DownloadOptions'
-import DownlaodOptions2 from '@/Components/DownloadOptions/Options'
 
 
 
