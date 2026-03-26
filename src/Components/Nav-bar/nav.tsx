@@ -1,11 +1,15 @@
 import '../../index.css'
-import Button from '../../Components/Buttons/DownloadAudit'
-import Hamburger from '../../assets/Nav/Hamburger/Hamnurger.svg'
+import Button from '../Buttons/DownloadAudit'
+import Hamburger from '@/assets/Nav/Hamburger/Hamnurger.svg'
 import Cancel from '../../assets/Nav/Hamburger/cancel.svg'
 import { useState } from 'react'
 import Logo from '../logo'
 import Pages from '../Sidebar/HamburgerPages'
 import DownloadButton from '../../assets/Download-Audit/material-symbols_download-rounded.svg'
+import DownlaodOptions1 from '@/Components/DownloadOptions/DownloadOptions'
+import DownlaodOptions2 from '@/Components/DownloadOptions/Options'
+
+
 
 type Props={
     name: string
@@ -46,6 +50,7 @@ export default function nav({name='Page Name',
                             }:Props) {
 
     const [hamburger, sethamburger] = useState(true)
+    const [Options, setOptions] = useState(true)
 
     const Overviewicon= <svg width="20" height="20" viewBox="0 0 20 20" fill={oicon} xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.6667 15.8333V8.74996C16.6667 8.62059 16.6366 8.49299 16.5787 8.37728C16.5208 8.26157 16.4368 8.16091 16.3333 8.08329L10.5 3.70829C10.3558 3.60011 10.1803 3.54163 10 3.54163C9.8197 3.54163 9.64426 3.60011 9.50001 3.70829L3.66668 8.08329C3.56318 8.16091 3.47918 8.26157 3.42132 8.37728C3.36346 8.49299 3.33334 8.62059 3.33334 8.74996V15.8333C3.33334 16.0543 3.42114 16.2663 3.57742 16.4225C3.7337 16.5788 3.94566 16.6666 4.16668 16.6666H7.50001C7.72102 16.6666 7.93299 16.5788 8.08927 16.4225C8.24555 16.2663 8.33334 16.0543 8.33334 15.8333V13.3333C8.33334 13.1123 8.42114 12.9003 8.57742 12.744C8.7337 12.5878 8.94566 12.5 9.16668 12.5H10.8333C11.0544 12.5 11.2663 12.5878 11.4226 12.744C11.5789 12.9003 11.6667 13.1123 11.6667 13.3333V15.8333C11.6667 16.0543 11.7545 16.2663 11.9108 16.4225C12.067 16.5788 12.279 16.6666 12.5 16.6666H15.8333C16.0544 16.6666 16.2663 16.5788 16.4226 16.4225C16.5789 16.2663 16.6667 16.0543 16.6667 15.8333Z" fill={oicon} stroke={oicon} stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
@@ -79,10 +84,23 @@ export default function nav({name='Page Name',
                     <p className='text-h5 font-medium'>{name}</p>
                 </div>
             </div>
-            <Button name='Download audit'/>
+
+            <section className='relative block max-[850px]:hidden'>
+                <Button onclick={() => setOptions(!Options)} name='Download audit'/>
+
+                {/* Download Options */}
+                <DownlaodOptions1 triggerOptions={Options ? 'hidden' : 'flex'}/>
+
+            </section>
 
             {/* Hamburger Button */}
-            <img src={DownloadButton} alt="Downlaod audit button" className='hidden max-[850px]:block'/>
+            <section className='relative hidden max-[850px]:block'>
+                <img onClick={() => setOptions(!Options)} src={DownloadButton} alt="Downlaod audit button"/>
+
+                {/* Download Options */}
+                <DownlaodOptions1 triggerOptions={Options ? 'hidden' : 'flex'}/>
+
+            </section>
         </nav>
 
         {/* Hamburger */}
@@ -113,6 +131,10 @@ export default function nav({name='Page Name',
             </section>
         </section>
         </section>
+
+
+        
+
         </>
     )
 }
