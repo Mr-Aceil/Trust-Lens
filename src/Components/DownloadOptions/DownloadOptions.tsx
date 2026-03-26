@@ -10,7 +10,7 @@ type Props={
 
 export default function DownloadOptions({triggerOptions}:Props) {
     return (
-        <section className={`flex-col absolute right-0 top-[3.5em] w-300 bg-white shadow-2xl ${triggerOptions}`}>
+        <section className={`flex-col absolute right-0 top-[3.5em] w-300 max-[500px]:w-200 bg-white shadow-2xl ${triggerOptions}`}>
             <DownloadOptions2 name='PDF' icon={PNG}/>
             <DownloadOptions2 name='PNG' icon={PDF}/>
             <DownloadOptions2 name='JPEG' icon={JPEG}/>
